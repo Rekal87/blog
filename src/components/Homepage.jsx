@@ -19,9 +19,14 @@ function Homepage() {
     },
   ]);
 
+  const handleDelete = (id) => {
+    const newBlog = blog.filter((blog) => blog.id !== id);
+    setBlog(newBlog);
+  };
+
   return (
     <div className="home">
-      <Bloglist blog={blog} title="All Blogs" />
+      <Bloglist blog={blog} title="All Blogs" handleDelete={handleDelete} />
     </div>
   );
 }
