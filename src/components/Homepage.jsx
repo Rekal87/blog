@@ -21,7 +21,7 @@ function Homepage() {
 
   return (
     <div className="home">
-      <Bloglist blog={blog} />
+      <Bloglist blog={blog} title="All Blogs" />
     </div>
   );
 }
