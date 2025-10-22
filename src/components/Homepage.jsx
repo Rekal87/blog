@@ -8,7 +8,6 @@ function Homepage() {
       body: "lorem ipsum...",
       author: "mario",
       id: 1,
-      src: "https://picsum.photos/300/200",
     },
     { title: "Welcome party!", body: "lorem ipsum...", author: "yoshi", id: 2 },
     {
@@ -19,6 +18,8 @@ function Homepage() {
     },
   ]);
 
+  const [name, setName] = useState("Mario");
+
   const handleDelete = (id) => {
     const newBlog = blog.filter((blog) => blog.id !== id);
     setBlog(newBlog);
@@ -26,12 +27,14 @@ function Homepage() {
 
   useEffect(() => {
     console.log("use effect ran");
-    console.log(blog);
-  });
+    console.log(name);
+  }, [name]);
 
   return (
     <div className="home">
       <Bloglist blog={blog} title="All Blogs" handleDelete={handleDelete} />
+      <button onClick={() => setName("Luigi")}>Change name</button>
+      <p>{name}</p>
     </div>
   );
 }
