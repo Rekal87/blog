@@ -5,10 +5,10 @@ import Users from "./Users";
 function Homepage() {
   const [blog, setBlog] = useState(null);
 
-  const handleDelete = (id) => {
+  /*  const handleDelete = (id) => {
     const newBlog = blog.filter((blog) => blog.id !== id);
     setBlog(newBlog);
-  };
+  }; */
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
